@@ -1,0 +1,5 @@
+wp-content/themes/.DS_Store
+wp-content/themes/animal-migrantes/.DS_Store
+wp-content/themes/animal-migrantes/node_modules
+wp-content/themes/animal-migrantes/node_modules/*
+wp-content/themes/animal-migrantes/package-lock.json
