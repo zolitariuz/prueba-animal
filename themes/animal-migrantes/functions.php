@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( '_S_VERSION', '1.0.3' );
 }
 
 if ( ! function_exists( 'animal_migrantes_setup' ) ) :
@@ -150,6 +150,11 @@ function animal_migrantes_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'animal_migrantes_scripts' );
+
+/**
+ * Define theme url
+ */
+define( 'THEME_URL', get_stylesheet_directory_uri() );
 
 /**
  * Implement the Custom Header feature.

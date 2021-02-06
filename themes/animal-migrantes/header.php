@@ -17,9 +17,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-	<?php wp_head(); ?>
-
 	<link rel="stylesheet" href="https://use.typekit.net/lqa3qgk.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<?php wp_head(); ?>
 
 	<link rel="apple-touch-icon" sizes="57x57" href="https://www.animalpolitico.com/wp-content/themes/animalpolitico-2019/static/assets/meta/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="https://www.animalpolitico.com/wp-content/themes/animalpolitico-2019/static/assets/meta/apple-icon-60x60.png">
@@ -34,7 +35,6 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="https://www.animalpolitico.com/wp-content/themes/animalpolitico-2019/static/assets/meta/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="https://www.animalpolitico.com/wp-content/themes/animalpolitico-2019/static/assets/meta/favicon-96x96.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="https://www.animalpolitico.com/wp-content/themes/animalpolitico-2019/static/assets/meta/favicon-16x16.png">
-	<link rel="manifest" href="https://www.animalpolitico.com/wp-content/themes/animalpolitico-2019/static/assets/meta/manifest.json">
 	<meta name="msapplication-TileColor" content="#000000">
 	<meta name="msapplication-TileImage" content="https://www.animalpolitico.com/wp-content/themes/animalpolitico-2019/static/assets/meta/ms-icon-144x144.png">
 	<meta name="theme-color" content="#000000">
@@ -50,27 +50,19 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'animal-migrantes' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$animal_migrantes_description = get_bloginfo( 'description', 'display' );
-			if ( $animal_migrantes_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $animal_migrantes_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'animal-migrantes' ); ?></button>
+			<img class="[ logo ]" srcset="
+				<?php echo THEME_URL; ?>/images/logo-animal-politico.png 1x,
+				<?php echo THEME_URL; ?>/images/logo-animal-politico@2x.png 2x,
+				<?php echo THEME_URL; ?>/images/logo-animal-politico@3x.png 3x
+			" alt="Logo Animal Político">
+			<h3>migrantes</h3>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+				<span class="icon-bar" id="one"></span>
+				<span class="icon-bar" id="two"></span>
+				<span class="icon-bar" id="thr"></span>
+			</button>
 			<?php
 			wp_nav_menu(
 				array(
@@ -81,3 +73,11 @@
 			?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
+
+	<div class="container">
+		<div class="row">
+			<div class="col-6">hola</div>
+			<div class="col-6">adios</div>
+
+		</div>
+	</div>

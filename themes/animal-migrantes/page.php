@@ -20,19 +20,33 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post();
-
 			get_template_part( 'template-parts/content', 'page' );
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
 		endwhile; // End of the loop.
 		?>
+
+		<section>
+			<h2>Carrusel</h2>
+			<?php
+			$args = array(
+				'posts_per_page' => 0,
+				'post_status' => 'publish',
+				'post_type'  => 'post'
+				);
+			$carrusel_query = new WP_Query( $args ); ?>
+			<div class="carrusel">
+				<?php if( $carrusel_query->have_posts() ) : while( $carrusel_query->have_posts() ) : $carrusel_query->the_post();
+					$background_image = get_the_post_thumbnail_url( $post, 'large' );
+					?>
+						<div class="carrusel-item" style="background-image: url(<?php echo $background_image; ?>);">
+							<h3 class="carrusel-item_title"><?php the_title(); ?></h3>
+							<a href="<?php the_permalink(); ?>" class="btn">Leer</a>
+						</div>
+					</div>
+				<?php endwhile; endif; ?>
+			</section>
+		</section>
 
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

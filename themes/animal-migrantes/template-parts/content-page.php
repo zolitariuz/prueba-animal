@@ -9,46 +9,26 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+<?php
+$image = get_the_post_thumbnail_url( $post, 'large' );
+?>
 
-	<?php animal_migrantes_post_thumbnail(); ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<header class="entry-header" style="background-image: url(<?php echo $image; ?>);" >
+		<h1 class="entry-title">mi<br />gran<br />tes</h1>
+		<button>comparte</button>
+		<img class="[ logo ]" srcset="
+				<?php echo THEME_URL; ?>/images/arrow-down.png 1x,
+				<?php echo THEME_URL; ?>/images/arrow-down@2x.png 2x,
+				<?php echo THEME_URL; ?>/images/arrow-down@3x.png 3x
+			" alt="Logo Animal Político">
+	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php
+		the_title( '<h2 class="entry-title">', '</h2>' );
 		the_content();
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'animal-migrantes' ),
-				'after'  => '</div>',
-			)
-		);
 		?>
 	</div><!-- .entry-content -->
 
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
-			edit_post_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'animal-migrantes' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					wp_kses_post( get_the_title() )
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-			?>
-		</footer><!-- .entry-footer -->
-	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
