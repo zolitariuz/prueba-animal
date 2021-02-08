@@ -6,4 +6,9 @@ h5,
 h6 {
 	clear: both;
 	font-family: $font__serif;
+	color: $color__primary;
+}
+
+h2{
+	font-size: 2rem;
 }

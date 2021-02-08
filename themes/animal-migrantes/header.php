@@ -18,7 +18,7 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<link rel="stylesheet" href="https://use.typekit.net/lqa3qgk.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap-grid.min.css">
 
 	<?php wp_head(); ?>
 
@@ -47,37 +47,35 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'animal-migrantes' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Saltar al contenido', 'animal-migrantes' ); ?></a>
 
-	<header id="masthead" class="site-header">
+	<header id="masthead" class="site-header container">
+
+		<img class="[ logo ]" srcset="
+			<?php echo THEME_URL; ?>/images/logo-animal-politico.png 1x,
+			<?php echo THEME_URL; ?>/images/logo-animal-politico@2x.png 2x,
+			<?php echo THEME_URL; ?>/images/logo-animal-politico@3x.png 3x
+		" alt="Logo Animal Político">
+		<h3 class="site-name">migrantes</h3>
+		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+			<span class="icon-bar" id="one"></span>
+			<span class="icon-bar" id="two"></span>
+		</button>
 
 		<nav id="site-navigation" class="main-navigation">
-			<img class="[ logo ]" srcset="
-				<?php echo THEME_URL; ?>/images/logo-animal-politico.png 1x,
-				<?php echo THEME_URL; ?>/images/logo-animal-politico@2x.png 2x,
-				<?php echo THEME_URL; ?>/images/logo-animal-politico@3x.png 3x
-			" alt="Logo Animal Político">
-			<h3>migrantes</h3>
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-				<span class="icon-bar" id="one"></span>
-				<span class="icon-bar" id="two"></span>
-				<span class="icon-bar" id="thr"></span>
-			</button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
+			<div class="container">
+				<div class="navigation-wrapper">
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'primary-menu',
+						)
+					);
+					?>
+					<button class="btn btn--full">comparte</button>
+				</div>
+			</div>
 		</nav><!-- #site-navigation -->
+
 	</header><!-- #masthead -->
-
-	<div class="container">
-		<div class="row">
-			<div class="col-6">hola</div>
-			<div class="col-6">adios</div>
-
-		</div>
-	</div>

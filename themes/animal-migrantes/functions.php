@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.3' );
+	define( '_S_VERSION', '1.0.9' );
 }
 
 if ( ! function_exists( 'animal_migrantes_setup' ) ) :
@@ -144,10 +144,6 @@ function animal_migrantes_scripts() {
 	wp_style_add_data( 'animal-migrantes-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'animal-migrantes-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'animal_migrantes_scripts' );
 

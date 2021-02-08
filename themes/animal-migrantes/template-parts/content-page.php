@@ -13,22 +13,23 @@
 $image = get_the_post_thumbnail_url( $post, 'large' );
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header" style="background-image: url(<?php echo $image; ?>);" >
-		<h1 class="entry-title">mi<br />gran<br />tes</h1>
-		<button>comparte</button>
-		<img class="[ logo ]" srcset="
-				<?php echo THEME_URL; ?>/images/arrow-down.png 1x,
-				<?php echo THEME_URL; ?>/images/arrow-down@2x.png 2x,
-				<?php echo THEME_URL; ?>/images/arrow-down@3x.png 3x
-			" alt="Logo Animal Político">
-	</header><!-- .entry-header -->
+<section class="cover" style="background-image: url(<?php echo $image; ?>);">
+	<h1 class="cover__title">mi<br />gran<br />tes</h1>
+	<button class="btn">comparte</button>
+	<img class="cover__arrow" srcset="
+			<?php echo THEME_URL; ?>/images/arrow-down.png 1x,
+			<?php echo THEME_URL; ?>/images/arrow-down@2x.png 2x,
+			<?php echo THEME_URL; ?>/images/arrow-down@3x.png 3x
+		" alt="Scroll Down">
+</section>
 
-	<div class="entry-content">
+<section class="intro">
+	<div class="container">
 		<?php
 		the_title( '<h2 class="entry-title">', '</h2>' );
 		the_content();
 		?>
-	</div><!-- .entry-content -->
+	</div>
+</section><!-- .entry-content -->
 
-</article><!-- #post-<?php the_ID(); ?> -->
+
