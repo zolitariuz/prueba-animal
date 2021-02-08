@@ -755,6 +755,8 @@ textarea {
 /* Posts and pages
 --------------------------------------------- */
 .cover {
+	background-size: cover;
+	background-repeat: no-repeat;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -938,6 +940,7 @@ textarea {
 
 .carrusel .carrusel-item {
 	background-size: cover;
+	background-repeat: no-repeat;
 	flex: 0 0 70%;
 	height: 400px;
 	border: 3px solid #827264;

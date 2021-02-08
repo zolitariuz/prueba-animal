@@ -23,7 +23,7 @@
 				//Smoot Scroll
 				const arrowDown = document.querySelector('.cover__arrow');
 				arrowDown.addEventListener( 'click', function() {
-					jump('.intro');
+					Jump('.intro');
 				});
 
 				const button = document.getElementsByClassName( 'menu-toggle' )[ 0 ];
